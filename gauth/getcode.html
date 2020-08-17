@@ -1,63 +1,79 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<title>Rider X - Authorization</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<style>
-	.card {
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-		max-width: 600px;
-		margin: auto;
-		padding: 2px;
-		text-align: center;
-		font-family: arial;
-	}
-	
-	.title {
-		color: grey;
-		font-size: 18px;
-	}
-	
-	button {
-		border: none;
-		outline: 0;
-		display: inline-block;
-		padding: 8px;
-		color: white;
-		border-radius: 5px;
-		background-color: #000;
-		text-align: center;
-		cursor: pointer;
-		width: 90%;
-		font-size: 18px;
-	}
-	
-	a {
-		text-decoration: none;
-		font-size: 22px;
-		color: black;
-	}
-	
-	button:hover,
-	a:hover {
-		opacity: 0.7;
-	}
-	</style>
-</head>
+    
+    <title>Rider X - Authorization</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<style>
+.container { 
+  position: relative; 
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: auto;
+  padding: 2px;
+  text-align: center;
+  font-family: arial;
+}
+.title {
+  color: grey;
+  font-size: 18px;
+}
 
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 90%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
 <body>
-	<div class="card">
-		<h1>Rider X</h1>
-		<p class="title">Torrent to Google Drive</p>
-		<div class="card-content" id="codeTextView" style="overflow: auto;margin-left: 8px; margin-right: px"> <span id="code">4/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span> </div>
-		<p>
-			<button style="background-color: black" class="btn" data-clipboard-target="#codeTextView">Copy Code</button>
-		</p>
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-	<script>
+
+
+
+<div class="container" style="height:100vh">
+  <div class="center">
+  <div class="card">
+  <h1>Rider X</h1>
+  <p class="title">Torrent to Google Drive</p>
+  <div class="card-content" id="codeTextView" style="overflow: auto;margin-left: 8px; margin-right: 8px" >
+									<span id="code">           4/3Axxxxxxxxxxxxxxxxxxxxxxxxxx              </span>
+							</div>
+    <p><button style="background-color: black" class="btn" data-clipboard-target="#codeTextView">Copy Code</button></p>
+								
+</div>
+  </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+			<script>
 	var cb = new ClipboardJS(".btn");
 	cb.on('success', function() {
 		M.toast({
@@ -70,16 +86,17 @@
 		});
 	});
 	</script>
-	<script language="JavaScript">
-	function processReason() {
-		var parameter = location.search.substring(1);
-		var fullcode = parameter.split("=");
-		var codeTemp = fullcode[1].split("&");
-		code = unescape(codeTemp[0]);
-		document.getElementById("code").innerHTML = code;
-	}
-	processReason()
-	</script>
-</body>
+			<script language="JavaScript">
+         function processReason()
+         {
+           var parameter = location.search.substring(1);
+           var fullcode = parameter.split("=");
+           var codeTemp  = fullcode[1].split("&"); 
+           code = unescape(codeTemp[0]);
+           document.getElementById("code").innerHTML = code;
+         }
+         processReason()
+      </script>
 
+</body>
 </html>
